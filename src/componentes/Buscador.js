@@ -1,7 +1,7 @@
 import {useNavigate}from 'react-router-dom'
-import Swal from "sweetalert";
+import swal from "sweetalert";
 
-function Search() {
+function Buscador() {
   const navegacion = useNavigate();
 
     const submitHandler = (e) => {
@@ -9,9 +9,9 @@ function Search() {
         const keyword= e.currentTarget.keyword.value.trim()
         
         if(keyword.length === 0){
-           Swal(<h5>Tiene que escribir una palabra</h5>)
+           swal(<h5>Tiene que escribir una palabra</h5>)
         }else if (keyword.length <4){
-            Swal(<h5>Tiene que escribir mas de 4 caracteres</h5>)
+            swal(<h5>Tiene que escribir mas de 4 caracteres</h5>)
         }else{
           e.currentTarget.keyword.value='';
           navegacion(`/resultados?keyword=${keyword}`)
@@ -31,4 +31,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default Buscador;

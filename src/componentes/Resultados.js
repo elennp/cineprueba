@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert";
+import swal from "sweetalert";
 import axios from "axios";
 
 function Resultados(props) {
@@ -17,7 +17,7 @@ function Resultados(props) {
       .then((response) => {
         const moviArray = response.data.results;
         if (moviArray.length ===0) {
-            Swal(<h1>No Obtuvimos Ningun Resultado</h1>)   
+            swal(<h1>No Obtuvimos Ningun Resultado</h1>)   
         }
         // cgl de apidata se convierte en la actualizacion del estado
         setMovieResults(moviArray);

@@ -1,0 +1,72 @@
+
+
+/* styles login */
+/* .titulo-login{
+    justify-content: center;
+    padding-left: 37%;
+    color: #151340;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.cuerpo-login{
+background-color: rgb(85, 150, 11);
+padding-top: 8em;
+padding-left: 3em;
+margin-left: 19em;
+margin-right: 18em;
+height: 19em;
+border-radius: 6em 2em;
+box-shadow:-2px 2px 0px 14px black;
+}
+
+.correoe{
+    border-radius: 1em;
+    height: 2em;
+    box-shadow:14px 12px 0px rgb(0 0 0 / 37%);
+}
+
+.correoE{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow:8px 1px 20px black;
+}
+.contrasena{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow:8px 1px 20px black;
+} */
+
+
+/* fin styles login  */
+
+.favourite-btn{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 16px;
+    top: 10px;
+border: none;
+
+}
+
+.boton{
+    background: url(https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/03/espectadores-cine-2258481.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100%;
+    padding-left: 50%;
+    padding-bottom: 8em;
+    padding-top: 24em;
+
+}
+.btn{
+    margin-bottom: 7em;
+}

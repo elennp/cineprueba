@@ -11,7 +11,7 @@ function Detalle() {
   const [movie,setMovie] = useState(null);
 
   useEffect(() => {
-    const endPoint=`https://api.themoviedb.org/3/movie/${ID}?api_key=39589bbdbc401060bd0a0b0c42637834&language=es-ES` 
+    const endPoint=`https://api.themoviedb.org/3/movie/${ID}?api_key=f33c2aaa54ccebeb7985121fd433907b&language=es-ES` 
     
     axios.get(endPoint).then(response=>{
     const moviData= response.data;

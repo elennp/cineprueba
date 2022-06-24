@@ -1,16 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import {Routes,Route } from "react-router-dom";
-// import Login from "./components/Login";
-import Listado from "./components/Listado";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Detalle from "./components/Detalle"
-import Resultados from "./components/Resultados";
-import Favoritos from "./components/Favoritos";
-import Search from "./components/Search";
-import './App.css';
-import "./components/bootstrap.min.css";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Login from "./componentes/Login";
+import Listado from "./componentes/Listado";
+import Header from "./componentes/Header";
+import Footer from "./componentes/Footer";
+import Detalle from "./componentes/Detalle";
+import Resultados from "./componentes/Resultados";
+import Favoritos from "./componentes/Favoritos";
+
+import './componentes/CSS/app.css';
+import "./componentes/CSS/bootstrap.min.css";
 
 function App() {
 
@@ -78,13 +78,13 @@ useEffect(() =>{
   }
 
   return (
-    <div>
+    <BrowserRouter>
 
-   <Navbar/>
-   <Search/>
+   <Header/>
+   
    <Routes>
      
-   {/* <Route path="/"  element= {<Login/>}/> */}
+   <Route path="/"  element= {<Login/>}/>
      <Route path="/listado"  element= { <Listado addOrRemoveFromFavs={addOrRemoveFromFavs}/>}/>
      <Route path="/detalle"  element= {<Detalle/>}/>
      <Route path="/resultados"  element= {<Resultados addOrRemoveFromFavs={addOrRemoveFromFavs}/>}/>
@@ -93,7 +93,7 @@ useEffect(() =>{
    </Routes>
     <Footer/> 
   
-   </div>
+   </BrowserRouter>
     
   );
 }

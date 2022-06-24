@@ -1,33 +1,34 @@
-import React from "react";
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert";
+import {useEffect,useState} from "react";
+import axios from "axios";
+import swal from "sweetalert";
 
+function Listado(props) {
 
-
-function Listado (props) {
-
-    let token =sessionStorage.getItem('token');
-    const [moviesList,setMoviesList]=useState([])
+  let token =sessionStorage.getItem('token');
+ const [moviesList,setMoviesList]=useState([])
   useEffect(()=>{
 
-  const endPonint='https://api.themoviedb.org/3/movie/550?api_key=f33c2aaa54ccebeb7985121fd433907b'
+  const endPonint='https://api.themoviedb.org/3/discover/movie?api_key=f33c2aaa54ccebeb7985121fd433907b&language=es-ES&page=1'
   axios.get(endPonint)
   .then(response=>{
     const apiData= response.data;
-    
+    // cgl de apidata se convierte en la actualizacion del estado
     setMoviesList(apiData.results)
-    console.log(apiData.results)
   })  
 
   .catch(error=>{
-     Swal(<h1>Tuvimos Errores, intenta mas tarde</h1>) 
+     swal(<h1>Tuvimos Errores, intenta mas tarde</h1>) 
  })
     
 },[setMoviesList])
-    return(
-<div className="row">
+
+
+    return (
+    <>
+{!token && <Link to="/"/> }
+     {/* estructura basica */}
+     <div className="row">
      {moviesList.map((oneMovie,idx)=>{
          return(
          
@@ -49,6 +50,10 @@ function Listado (props) {
        })
      }
      </div>
-    );
+      
+    
+    </>
+  );
 }
+
 export default Listado;
